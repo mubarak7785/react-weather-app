@@ -1,11 +1,21 @@
-.inp{
- 
+.main-div{
   margin: auto;
-  width: 70%;
-  height: 40px;
+  width: 90%;
   margin-top: 30px;
 }
 
+.inp{
+ 
+  margin: auto;
+  width: 100%;
+  height: 40px;
+  margin-top: 30px;
+}
+h1{
+  margin-left: 20%;
+  color: brown;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 .inp>input{
   width: 85%;
   height: 90%;
@@ -19,4 +29,12 @@
   height: 100%;
   font-weight: bold;
   font-size: 25px;
+}
+.forecast-div{
+  display: flex;
+  justify-content: space-between;
+}
+
+p{
+  font-weight: bold;
 }
