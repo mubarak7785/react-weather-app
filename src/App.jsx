@@ -30,14 +30,16 @@ function App() {
   };
  
   return (
+    
     <div className="App">
+      <h1>Weather App</h1>
       <div className="main-div">
         <div className="inp">
         <input type="text" onChange={getname} placeholder=" Enter city name" />
         <button onClick={getcityData}>Search</button>
         </div>
         <div className="display">
-       <p>{wdata.temp}</p>
+       <p>Tempratur : {wdata.temp}</p>
         </div>
         <div>
           {fcast.map((elem)=>{
