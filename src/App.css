@@ -1,13 +1,13 @@
 .main-div{
   margin: auto;
-  width: 90%;
+  width: 85%;
   margin-top: 30px;
 }
 
 .inp{
  
   margin: auto;
-  width: 100%;
+  width: 85%;
   height: 40px;
   margin-top: 30px;
 }
@@ -17,22 +17,32 @@ h1{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 .inp>input{
-  width: 85%;
+  width: 80%;
   height: 90%;
   font-weight: bold;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   font-size: 25px;
+ 
 }
 
 .inp>button{
-  width: 12%;
-  height: 100%;
+ height: 100%;
   font-weight: bold;
   font-size: 25px;
 }
 .forecast-div{
   display: flex;
+  align-items: center;
   justify-content: space-between;
+}
+
+.day{
+  text-align: center;
+  width: 150px;
+  
+  /* border: 1px solid black; */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
 }
 
 p{

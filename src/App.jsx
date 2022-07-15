@@ -5,10 +5,14 @@ import "./App.css";
 function App() {
   const [data, setData] = useState({});
 
-  const [name, setName] = useState("");
+  const [name, setName] = useState("kudachi");
 
   const [wdata, setWdata] = useState({});
   const [fcast, setFcast] = useState([]);
+
+  useEffect(() => {
+    getcityData();
+  }, []);
 
   const getcityData = () => {
     fetch(
@@ -21,6 +25,7 @@ function App() {
           forecast();
         }
       });
+    // console.log(wdata.main.temp)
   };
 
   const forecast = () => {
@@ -40,27 +45,24 @@ function App() {
   return (
     <div className="App">
       <h1>Weather App</h1>
+      <div className="inp">
+        <input type="text" onChange={getname} placeholder=" Enter city name" />
+        <button onClick={getcityData}>Search</button>
+      </div>
       <div className="main-div">
-        <div className="inp">
-          <input
-            type="text"
-            onChange={getname}
-            placeholder=" Enter city name"
-          />
-          <button onClick={getcityData}>Search</button>
-        </div>
         <div className="display">
-          <h3>Tempratur : {wdata.temp}</h3>
+          <h2>Temprature : {wdata.temp}°</h2>
+          <h2>Humidity : {wdata.humidity}</h2>
         </div>
         <div className="forecast-div">
           {fcast.map((elem) => {
             return (
-              <div>
+              <div className="day">
+                <p>{elem.weather[0].main}</p>
                 <img
                   src={`http://openweathermap.org/img/wn/${elem.weather[0].icon}@2x.png`}
                 />
-                <p>Tempmax: {elem.main.temp_max}</p>
-                <p>Tempmin: {elem.main.temp_min}</p>
+                <p>{elem.main.temp}°</p>
               </div>
             );
           })}
