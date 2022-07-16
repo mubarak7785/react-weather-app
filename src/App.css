@@ -1,3 +1,4 @@
+
 .main-div{
   margin: auto;
   width: 85%;
@@ -5,28 +6,45 @@
 }
 
 .inp{
- 
+  display: flex;
+  justify-content: center;
   margin: auto;
   width: 85%;
-  height: 40px;
+  height: 80px;
   margin-top: 30px;
+  align-items: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 10px;
 }
 h1{
-  margin-left: 20%;
-  color: brown;
+  margin-left: 8%;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+  padding: 4px 0px;
 }
 .inp>input{
-  width: 80%;
-  height: 90%;
-  font-weight: bold;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  font-size: 25px;
+  justify-content: center;
  
+  width: 80%;
+  height: 50%;
+  font-weight: bold;
+  font-size: 25px;
+ background-color: whitesmoke;
+}
+
+button:hover{
+  background-color: black;
+  color: white;
+  cursor: pointer;
 }
 
 .inp>button{
- height: 100%;
+ height: 57%;
   font-weight: bold;
   font-size: 25px;
 }
@@ -39,7 +57,7 @@ h1{
 .day{
   text-align: center;
   width: 150px;
-  
+  font-size: 20px;
   /* border: 1px solid black; */
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 10px;
@@ -48,3 +66,28 @@ h1{
 p{
   font-weight: bold;
 }
+
+.ph{
+  display: flex;
+  justify-content: space-around;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin-bottom: 3%;
+  border-radius: 10px;
+}
+
+.ph>h2{
+  padding: 2px 15px;
+  background-color: lightgray;
+  font-weight: bolder;
+}
+
+.temp>p{
+  font-size: 40px;
+}
+
+.name{
+  font-size: 30px;
+  color: blue;
+  font-weight: bolder;
+}
+

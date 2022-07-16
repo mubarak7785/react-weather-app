@@ -9,6 +9,7 @@ function App() {
 
   const [wdata, setWdata] = useState({});
   const [fcast, setFcast] = useState([]);
+  const [edata, setEdata] = useState({});
 
   useEffect(() => {
     getcityData();
@@ -22,6 +23,7 @@ function App() {
       .then((data) => {
         if (data.main.temp) {
           setWdata(data.main);
+          setEdata(data);
           forecast();
         }
       });
@@ -51,8 +53,15 @@ function App() {
       </div>
       <div className="main-div">
         <div className="display">
-          <h2>Temprature : {wdata.temp}°</h2>
-          <h2>Humidity : {wdata.humidity}</h2>
+        <p className="name">{edata.name}</p>
+          <div className="temp">
+            <p> {wdata.temp}°C</p>
+          </div>
+         
+          <div className="ph">
+            <h2>Humidity : {wdata.humidity} %</h2>
+            <h2>Pressure : {wdata.pressure} hPa</h2>
+          </div>
         </div>
         <div className="forecast-div">
           {fcast.map((elem) => {
@@ -62,7 +71,7 @@ function App() {
                 <img
                   src={`http://openweathermap.org/img/wn/${elem.weather[0].icon}@2x.png`}
                 />
-                <p>{elem.main.temp}°</p>
+                <p>{elem.main.temp}°C</p>
               </div>
             );
           })}
