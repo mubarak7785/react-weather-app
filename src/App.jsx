@@ -46,18 +46,18 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Weather App</h1>
+      {/* <h1>Weather App</h1> */}
       <div className="inp">
         <input type="text" onChange={getname} placeholder=" Enter city name" />
         <button onClick={getcityData}>Search</button>
       </div>
       <div className="main-div">
         <div className="display">
-        <p className="name">{edata.name}</p>
+          <p className="name">{edata.name}</p>
           <div className="temp">
             <p> {wdata.temp}°C</p>
           </div>
-         
+
           <div className="ph">
             <h2>Humidity : {wdata.humidity} %</h2>
             <h2>Pressure : {wdata.pressure} hPa</h2>
@@ -75,6 +75,13 @@ function App() {
               </div>
             );
           })}
+        </div>
+        <h2 className="gm">Google-map</h2>
+        <div className="iframe">
+          <iframe
+            src={`https://maps.google.com/maps?q=${name}&t=&z=9&ie=UTF8&iwloc=&output=embed`}
+            frameborder="0"
+          ></iframe>
         </div>
       </div>
     </div>
