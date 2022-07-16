@@ -19,7 +19,7 @@
 h1{
   margin-left: 8%;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  width: 20%;
+  width: 15%;
   display: flex;
   justify-content: center;
   background-color: blue;
@@ -83,12 +83,13 @@ p{
 
 .temp>p{
   font-size: 40px;
+  height: 40px;
 }
 
 .name{
   font-size: 30px;
-  color: blue;
   font-weight: bolder;
+  height: 30px;
 }
 
 .iframe{
