@@ -64,14 +64,14 @@ function App() {
           </div>
         </div>
         <div className="forecast-div">
-          {fcast.map((elem) => {
+          {fcast.map((el) => {
             return (
               <div className="day">
-                <p>{elem.weather[0].main}</p>
+                <p>{el.weather[0].main}</p>
                 <img
-                  src={`http://openweathermap.org/img/wn/${elem.weather[0].icon}@2x.png`}
+                  src={`http://openweathermap.org/img/wn/${el.weather[0].icon}@2x.png`}
                 />
-                <p>{elem.main.temp}°C</p>
+                <p>{el.main.temp}°C</p>
               </div>
             );
           })}
