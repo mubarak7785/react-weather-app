@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import GetUserLocation from "./components/Location";
 import "./App.css";
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
   const [wdata, setWdata] = useState({});
   const [fcast, setFcast] = useState([]);
   const [edata, setEdata] = useState({});
+  const local = GetUserLocation();
 
   useEffect(() => {
     getcityData();
