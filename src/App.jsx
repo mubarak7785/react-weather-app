@@ -64,7 +64,7 @@ function App() {
 
   return (
     <div className="App">
-        <GetUserLocation/>
+       
       <div className="inp">
         <input type="text" onChange={getname} placeholder=" Enter city name" />
         <button onClick={getcityData}>Search</button>
