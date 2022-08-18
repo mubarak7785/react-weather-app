@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import GetUserLocation from "./components/Location";
+import Charts from "./components/Charts"
+
 import "./App.css";
 import {
   ResponsiveContainer,
@@ -55,6 +57,7 @@ function App() {
       .then((fcast) => {
         setFcast(fcast.list);
       });
+      console.log(fcast)
   };
 
   const getname = (e) => {
@@ -75,7 +78,9 @@ function App() {
           <div className="temp">
             <p> {wdata.temp}°C</p>
           </div>
-
+          <br />
+          <Charts data={fcast}/>
+          
           <div className="ph">
             <h2>Humidity : {wdata.humidity} %</h2>
             <h2>Pressure : {wdata.pressure} hPa</h2>
