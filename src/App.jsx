@@ -63,7 +63,44 @@ function App() {
   const getname = (e) => {
     setName(e.target.value);
   };
-  
+  const sunData = [
+    {
+      sun: `${convertString(edata.sys?.sunrise)}:${new Date(
+        edata.sys?.sunrise
+      ).getMinutes()} am`,
+      value: 0,
+    },
+    { sun: "", value: 10 },
+    {
+      sun: `${convertString(edata.sys?.sunset) - 12}:${new Date(
+        edata.sys?.sunset
+      ).getMinutes()} pm`,
+      value: 0,
+    },
+  ];
+
+  const SunTooltip = ({ active, label }) => {
+    if (active) {
+      return (
+        <div>
+          {label.slice(-2) === "am" ? (
+            <div className="sun-graph">
+              <strong>Sunrise</strong>
+              <p>{label}</p>
+            </div>
+          ) : label.slice(-2) === "pm" ? (
+            <div className="sun-graph">
+              <strong>Sunset</strong>
+              <p>{label}</p>
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
+      );
+    }
+    return null;
+  };
 
   return (
     <div className="App">
@@ -79,7 +116,7 @@ function App() {
             <p> {wdata.temp}°C</p>
           </div>
           <br />
-          <Charts data={fcast}/>
+          <Charts data={fcast} className="chart-day" />
           
           <div className="ph">
             <h2>Humidity : {wdata.humidity} %</h2>
@@ -117,6 +154,30 @@ function App() {
             frameborder="0"
           ></iframe>
         </div>
+        <h2 className="gm">Sunrise-Sunset Graph</h2>
+        <ResponsiveContainer width="100%" height={160}>
+              <AreaChart data={sunData}>
+                <defs>
+                  <linearGradient id="sun-color" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="20%" stopColor="#f5e3be" stopOpacity={0.7} />
+                    <stop offset="95%" stopColor="#f5e3be" stopOpacity={0} />
+                  </linearGradient>
+                </defs>
+                <XAxis
+                  dataKey="sun"
+                  padding={{ left: 30, right: 30 }}
+                  tickLine={false}
+                />
+                <Area
+                  type="monotone"
+                  dataKey="value"
+                  stroke="#eccb87"
+                  fillOpacity={1}
+                  fill="url(#sun-color)"
+                />
+                <Tooltip content={<SunTooltip />} />
+              </AreaChart>
+            </ResponsiveContainer>
       </div>
     </div>
   );
