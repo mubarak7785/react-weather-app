@@ -35,13 +35,13 @@ const Charts = ({data}) => {
             xaxis: {
                 categories: 
                     [
-                        "FRI",
-                        "SAT",
                         "SUN",
                         "MON",
                         "TUE",
                         "WED",
-                        "THU"
+                        "THU",
+                        "FRI",
+                        "SAT"
                     ],
             }
         },
